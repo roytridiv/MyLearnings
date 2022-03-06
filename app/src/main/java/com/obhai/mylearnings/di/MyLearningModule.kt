@@ -2,11 +2,13 @@ package com.obhai.mylearnings.di
 
 import android.content.Context
 import com.obhai.mylearnings.BaseApplication
+import dagger.Binds
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
+import javax.inject.Named
 import javax.inject.Singleton
 
 @Module
@@ -21,8 +23,19 @@ object  MyLearningModule{
 
     @Singleton
     @Provides
+    @Named("test_string1")
     fun provideTestString(): String
     {
-        return "this is a test TEXT"
+        return "this is a test TEXT 1"
     }
+
+    @Singleton
+    @Provides
+    @Named("test_string2")
+    fun provideTestString2(): String
+    {
+        return "this is a test TEXT 2"
+    }
+
+
 }
