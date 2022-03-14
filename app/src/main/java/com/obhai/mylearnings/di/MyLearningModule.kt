@@ -11,29 +11,39 @@ import dagger.hilt.components.SingletonComponent
 import javax.inject.Named
 import javax.inject.Singleton
 
+
 @Module
 @InstallIn(SingletonComponent::class)
-object  MyLearningModule{
+abstract class MyLearning {
+
+    /*@Singleton
+    @Binds
+    abstract fun myAbstractFunction(
+         text :String
+    )*/
+}
+
+@Module
+@InstallIn(SingletonComponent::class)
+object MyLearningModule {
 
     @Singleton
     @Provides
-    fun provideApplication(@ApplicationContext app: Context): BaseApplication{
+    fun provideApplication(@ApplicationContext app: Context): BaseApplication {
         return app as BaseApplication
     }
 
     @Singleton
     @Provides
     @Named("test_string1")
-    fun provideTestString(): String
-    {
+    fun provideTestString(): String {
         return "this is a test TEXT 1"
     }
 
     @Singleton
     @Provides
     @Named("test_string2")
-    fun provideTestString2(): String
-    {
+    fun provideTestString2(): String {
         return "this is a test TEXT 2"
     }
 
