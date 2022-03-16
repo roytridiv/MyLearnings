@@ -7,7 +7,7 @@ import android.os.Environment
 import java.io.*
 import android.os.Build
 import androidx.security.crypto.EncryptedFile
-import androidx.security.crypto.MasterKey
+//import androidx.security.crypto.MasterKey
 
 
 class MainActivity2 : AppCompatActivity() {
@@ -16,9 +16,9 @@ class MainActivity2 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main2)
-        val masterKey = MasterKey.Builder(this, MasterKey.DEFAULT_MASTER_KEY_ALIAS)
-            .setKeyScheme(MasterKey.KeyScheme.AES256_GCM)
-            .build()
+//        val masterKey = MasterKey.Builder(this, MasterKey.DEFAULT_MASTER_KEY_ALIAS)
+//            .setKeyScheme(MasterKey.KeyScheme.AES256_GCM)
+//            .build()
 
 //        val fileToRead = "testrrr.mp3"
 //        val encryptedFile = EncryptedFile.Builder(
